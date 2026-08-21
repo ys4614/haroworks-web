@@ -1,0 +1,8 @@
+# Local tooling / editor
+.claude/
+.DS_Store
+Thumbs.db
+*.log
+
+# Dependencies (将来 npm 等を使う場合)
+node_modules/
