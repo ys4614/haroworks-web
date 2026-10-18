@@ -292,6 +292,41 @@ a:hover {
   transform: translateY(-2px);
 }
 
+.product-featured {
+  grid-column: 1 / -1;
+}
+
+.product-badge {
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--blue);
+}
+
+.store-btn-soon {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  color: var(--navy);
+  cursor: default;
+}
+
+.store-btn-soon:hover {
+  background: var(--bg-alt);
+  transform: none;
+}
+
+.store-btn-ghost {
+  background: transparent;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+}
+
+.store-btn-ghost:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
 /* Cards */
 .cards {
   display: grid;

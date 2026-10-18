@@ -34,6 +34,7 @@ HARO Works（ハロワークス）の公式ウェブサイトです。**この�
 | --- | --- |
 | つぶトレ - AIスピーキングコーチ（TsubuTalk: AI Speaking Coach） | [App Store](https://apps.apple.com/jp/app/id6779087627) / [Google Play](https://play.google.com/store/apps/details?id=app.tsubutalk.mobile) |
 | 連打名人 - Tap Champion | [App Store](https://apps.apple.com/jp/app/id6788312662) / [Google Play](https://play.google.com/store/apps/details?id=com.haroworks.tapchampion) |
+| 残心スピリッツII（Zanshin Spirits II） | 2026-10-24 配信開始。公開後に [App Store](https://apps.apple.com/jp/app/id6822337942) / [Google Play](https://play.google.com/store/apps/details?id=com.haroworks.zanshinspirits2)（公開前は 404）。サイトのカードは「10/24 配信開始」表示で、公開日にストアのリンクへ差し替える |
 
 ## お問い合わせ
 
