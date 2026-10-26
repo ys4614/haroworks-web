@@ -13,7 +13,7 @@ HARO Works（ハロワークス）の公式ウェブサイトです。**この�
 | `index.html` | サイト本体（トップページ） |
 | `style.css` | スタイルシート |
 | `assets/` | アプリアイコン |
-| `takeiteasy/help/` | テイクイットイージー（Take It Easy）のヘルプ（`index.html` = 日本語・`en/` = 英語・`help.css`・`img/`）。画面は take-it-easy の `store_test/help_shots_test.dart` で描いた自前の画面 |
+| `takeiteasy/help/` | テイクイットイージー（Take It Easy）のヘルプ。`index.html` = 日本語、`en/` `zh-hans/` `zh-hant/` `ko/` `es/` `fr/` `de/` `pt/` = 各言語。右上のプルダウンで切り替え、初めての訪問では端末の言語のページへ移る（選んだ言語はブラウザに覚える）。`help.css` は共通（変えたら HTML の `?v=` を上げる）。`img/{言語}/` の画面は take-it-easy の `store_test/help_shots_test.dart` で描いた自前の画面 |
 | `CNAME` | 独自ドメイン設定（`haroworks.com`）— **削除・変更しないこと** |
 | `app-ads.txt` | AdMob の広告主確認用（`pub-8513602258219243`）— **削除・変更しないこと** |
 | `.nojekyll` | GitHub Pages の Jekyll 処理を無効化 |

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko" data-help-lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Take It Easy 도움말 | HARO Works</title>
+  <meta name="description" content="Take It Easy 사용법. 음악 링크 추가(Amazon Music 예시), 장면, 알림, 집중 모드, 응원 팁, 자주 묻는 질문." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#eef5fc" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+  <link rel="canonical" href="https://haroworks.com/takeiteasy/help/ko/" />
+  <link rel="alternate" hreflang="ja" href="https://haroworks.com/takeiteasy/help/" />
+  <link rel="alternate" hreflang="en" href="https://haroworks.com/takeiteasy/help/en/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://haroworks.com/takeiteasy/help/zh-hans/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://haroworks.com/takeiteasy/help/zh-hant/" />
+  <link rel="alternate" hreflang="ko" href="https://haroworks.com/takeiteasy/help/ko/" />
+  <link rel="alternate" hreflang="es" href="https://haroworks.com/takeiteasy/help/es/" />
+  <link rel="alternate" hreflang="fr" href="https://haroworks.com/takeiteasy/help/fr/" />
+  <link rel="alternate" hreflang="de" href="https://haroworks.com/takeiteasy/help/de/" />
+  <link rel="alternate" hreflang="pt" href="https://haroworks.com/takeiteasy/help/pt/" />
+  <link rel="alternate" hreflang="x-default" href="https://haroworks.com/takeiteasy/help/en/" />
+  <link rel="icon" href="../img/icon.png" />
+  <link rel="apple-touch-icon" href="../img/icon.png" />
+  <link rel="stylesheet" href="../help.css?v=3" />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      var KEY = 'tie-help-lang';
+      var BASE = '/takeiteasy/help/';
+      var PATHS = {'ja': '', 'en': 'en/', 'zh-hans': 'zh-hans/', 'zh-hant': 'zh-hant/', 'ko': 'ko/', 'es': 'es/', 'fr': 'fr/', 'de': 'de/', 'pt': 'pt/'};
+      window.tieHelp = { key: KEY, base: BASE, paths: PATHS };
+      try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+      if (navigator.webdriver || /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)) return;
+      var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+      var pick = null;
+      for (var i = 0; i < langs.length && !pick; i++) {
+        var l = String(langs[i]).toLowerCase();
+        if (l.indexOf('zh') === 0) pick = /hant|-tw|-hk|-mo/.test(l) ? 'zh-hant' : 'zh-hans';
+        else if (PATHS.hasOwnProperty(l.split('-')[0])) pick = l.split('-')[0];
+      }
+      pick = pick || 'en';
+      if (pick !== d.getAttribute('data-help-lang')) location.replace(BASE + PATHS[pick] + location.hash);
+    })();
+  </script>
+</head>
+<body>
+  <nav class="nav" aria-label="도움말">
+    <div class="wrap">
+      <a class="nav-brand" href="#top"><img src="../img/icon.png" alt="" />Take It Easy</a>
+      <div class="nav-links">
+        <a href="#music">음악</a>
+        <a href="#scenes">장면</a>
+        <a href="#basics">기본</a>
+        <a href="#notices">알림</a>
+        <a href="#faq">자주 묻는 질문</a>
+      </div>
+      <label class="lang-select">
+        <select aria-label="언어" onchange="try{localStorage.setItem(tieHelp.key,this.value)}catch(e){}location.href=tieHelp.base+tieHelp.paths[this.value]">
+          <option value="ja" lang="ja">日本語</option>
+          <option value="en" lang="en">English</option>
+          <option value="zh-hans" lang="zh-Hans">简体中文</option>
+          <option value="zh-hant" lang="zh-Hant">繁體中文</option>
+          <option value="ko" selected lang="ko">한국어</option>
+          <option value="es" lang="es">Español</option>
+          <option value="fr" lang="fr">Français</option>
+          <option value="de" lang="de">Deutsch</option>
+          <option value="pt" lang="pt">Português</option>
+        </select>
+      </label>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Take It Easy 도움말</p>
+        <h1>책상 한쪽에서, 말없이 시간을 센다.</h1>
+        <p class="sub">Take It Easy는 소리를 하나도 내지 않아요. 25분을 조용히 세다가, 이따금 짧은 말 몇 마디를 화면에 남겨 둘 뿐이에요. 하는 일은 그게 전부예요. 이 앱과 어떻게 지내면 좋은지, 차례대로 적어 볼게요.</p>
+        <div class="hero-cta">
+          <a class="pill pill-solid" href="#music">음악 링크 추가하기</a>
+          <a class="pill pill-ghost" href="#faq">자주 묻는 질문 ›</a>
+        </div>
+
+        <div class="hero-phones" aria-hidden="true">
+          <figure class="phone"><img src="../img/ko/link-edit.png" alt="" width="780" height="1688" /></figure>
+          <figure class="phone"><img src="../img/ko/main-music.png" alt="" width="780" height="1688" /></figure>
+          <figure class="phone"><img src="../img/ko/overlay-break.png" alt="" width="780" height="1688" /></figure>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <nav class="topics" aria-label="목차">
+        <a class="topic" href="#music">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M18 29V15l12-3v14"/><circle class="fl" cx="15.5" cy="29" r="3"/><circle class="fl" cx="27.5" cy="26" r="3"/></svg>
+          <strong>음악 링크</strong><span>늘 듣던 곡을 바로 열 수 있게</span>
+        </a>
+        <a class="topic" href="#scenes">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><circle class="st" cx="22" cy="22" r="10"/><path class="st" d="M22 16v6l4 3"/></svg>
+          <strong>장면</strong><span>재택하는 날, 시험 주간, 점심시간</span>
+        </a>
+        <a class="topic" href="#basics">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="fl" d="M18 14.5v15l12-7.5z"/></svg>
+          <strong>기본 사용법</strong><span>누를 곳은 버튼 세 개</span>
+        </a>
+        <a class="topic" href="#notices">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M15 27h14l-2-3v-5a5 5 0 0 0-10 0v5zM20 30a2 2 0 0 0 4 0"/></svg>
+          <strong>알림</strong><span>소리 대신 진동과 알림</span>
+        </a>
+        <a class="topic" href="#look">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><circle class="st" cx="22" cy="22" r="10"/><path class="fl" d="M22 12a10 10 0 0 1 0 20z"/></svg>
+          <strong>표시와 테마</strong><span>문자판과 네 가지 색</span>
+        </a>
+        <a class="topic" href="#tip">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M22 30s-8-4.6-8-10a4.5 4.5 0 0 1 8-2.8 4.5 4.5 0 0 1 8 2.8c0 5.4-8 10-8 10z"/></svg>
+          <strong>응원 팁</strong><span>광고 대신</span>
+        </a>
+        <a class="topic" href="#faq">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M18.5 18a3.5 3.5 0 1 1 5 3.2c-1 .5-1.5 1.3-1.5 2.3v.5"/><circle class="fl" cx="22" cy="28.5" r="1.4"/></svg>
+          <strong>자주 묻는 질문</strong><span>소리는요? 음악은요?</span>
+        </a>
+        <a class="topic" href="#contact">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><rect class="st" x="13" y="15" width="18" height="14" rx="3"/><path class="st" d="M14 17l8 6 8-6"/></svg>
+          <strong>문의</strong><span>소감도, 버그도</span>
+        </a>
+      </nav>
+    </div>
+
+    <section id="music">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>음악은 늘 쓰던 앱에서.</h2>
+          <p>이 앱은 배경 음악을 틀지 않고, 듣고 있는 곡을 멈추지도 않아요. 음악은 평소에 쓰는 앱에 맡겨 두었어요. 대신 자주 듣는 플레이리스트의 링크를 맡겨 두면, 일을 시작하거나 쉬러 가는 순간에 바로 열 수 있어요. 여기서는 Amazon Music을 예로 들어 차례대로 따라가 볼게요.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num">STEP 1</span>
+            <h3>Amazon Music에서 링크 복사하기</h3>
+            <ol>
+              <li>작업하는 동안 곁에 두고 싶은 플레이리스트나 앨범, 곡을 열어요.</li>
+              <li>공유 버튼을 눌러요. 보이지 않으면 ‘…’ 메뉴 안에 <span class="ui">공유</span>가 들어 있어요.</li>
+              <li>나타난 목록에서 <span class="ui">링크 복사</span>를 골라요. iPhone에서는 그냥 <span class="ui">복사</span>라고만 적혀 있기도 해요.</li>
+            </ol>
+            <div class="step-foot">
+              <figure class="phone">
+                <svg viewBox="0 0 240 520" role="img" aria-labelledby="share-ko-title">
+                  <title id="share-ko-title">그림: 공유 시트에서 링크 복사를 고르는 모습</title>
+                  <rect x="0" y="0" width="240" height="520" fill="#eef5fc" />
+                  <rect x="24" y="64" width="192" height="192" rx="16" fill="#d7e2ee" />
+                  <rect x="24" y="276" width="140" height="14" rx="7" fill="#c3d1e0" />
+                  <rect x="24" y="300" width="96" height="12" rx="6" fill="#d7e2ee" />
+                  <rect x="0" y="300" width="240" height="220" rx="24" fill="#ffffff" />
+                  <rect x="104" y="312" width="32" height="5" rx="2.5" fill="#c3d1e0" />
+                  <text x="24" y="350" font-size="17" font-weight="700" fill="#0f1c2e" font-family="-apple-system, 'Helvetica Neue', sans-serif">공유</text>
+                  <rect x="16" y="366" width="208" height="48" rx="14" fill="#e3edf8" stroke="#6a89a7" stroke-width="2" />
+                  <circle cx="42" cy="390" r="12" fill="#384959" />
+                  <path d="M36.5 393.5l3-3m2-2l3-3m-6.5 1.5l-1.5 1.5a3 3 0 0 0 4.2 4.2l1.5-1.5m1.6-5.7l1.5-1.5a3 3 0 0 1 4.2 4.2l-1.5 1.5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" />
+                  <text x="64" y="396" font-size="15" font-weight="700" fill="#0f1c2e" font-family="-apple-system, 'Helvetica Neue', sans-serif">링크 복사</text>
+                  <circle cx="42" cy="444" r="12" fill="#d7e2ee" />
+                  <rect x="64" y="438" width="96" height="12" rx="6" fill="#d7e2ee" />
+                  <circle cx="42" cy="490" r="12" fill="#d7e2ee" />
+                  <rect x="64" y="484" width="120" height="12" rx="6" fill="#d7e2ee" />
+                </svg>
+              </figure>
+            </div>
+          </article>
+
+          <article class="step reveal">
+            <span class="step-num">STEP 2</span>
+            <h3>Take It Easy에 붙여 넣기</h3>
+            <ol>
+              <li><span style="white-space:nowrap"><span class="path">설정 › 음악과 문구 › 음악</span>으로</span> 들어가요.</li>
+              <li><span class="ui">음악 링크</span>를 열고 <span class="ui">복사한 링크를 붙여 넣어 추가</span>를 누르면, 방금 복사한 링크가 그대로 들어가요.</li>
+              <li>이름은 마음대로 붙이면 돼요. ‘집중 플레이리스트’든 ‘비 오는 날’이든, 나중에 보고 알아볼 수 있으면 충분해요.</li>
+            </ol>
+            <div class="step-foot">
+              <figure class="phone"><img src="../img/ko/link-edit.png" alt="링크 편집. 이름은 집중 플레이리스트, 지금 링크는 music.amazon.com, 열어 보기" width="780" height="1688" loading="lazy" /></figure>
+            </div>
+          </article>
+
+          <article class="step reveal">
+            <span class="step-num">STEP 3</span>
+            <h3>시작할 때 열기</h3>
+            <ol>
+              <li>이제 메인 화면에 <span class="ui">&lt;이름&gt; 열기</span>가 보여요. 누르면 Amazon Music이 열려요.</li>
+              <li>집중이 끝난 화면에는 <span class="ui">음악 열고 휴식 시작</span>도 나와요. 휴식이 시작되는 바로 그때 링크도 함께 열려요.</li>
+              <li>곡이 흐르기 시작하면 Take It Easy로 돌아오세요. 음악은 그대로 계속 흘러요.</li>
+            </ol>
+            <div class="step-foot">
+              <figure class="phone"><img src="../img/ko/main-music.png" alt="메인 화면. 재생 버튼 위에 집중 플레이리스트 열기" width="780" height="1688" loading="lazy" /></figure>
+            </div>
+          </article>
+        </div>
+
+        <div class="gallery reveal" aria-label="링크를 추가하는 화면">
+          <figure>
+            <div class="phone"><img src="../img/ko/music-sheet.png" alt="설정의 음악. 음악 링크 0 / 5, 집중 음악 없음, 휴식 음악 없음" width="780" height="1688" loading="lazy" /></div>
+            <figcaption><b>설정 › 음악</b>링크를 맡겨 두고, 집중과 휴식의 음악을 고르는 곳</figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="../img/ko/links-empty.png" alt="음악 링크 시트. 복사한 링크를 붙여 넣어 추가 버튼" width="780" height="1688" loading="lazy" /></div>
+            <figcaption><b>붙여 넣어 추가</b>복사한 링크가 그대로 첫 번째 자리에 들어가요</figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="../img/ko/music-sheet-done.png" alt="설정의 음악. 집중 음악과 휴식 음악에 집중 플레이리스트" width="780" height="1688" loading="lazy" /></div>
+            <figcaption><b>집중 음악 · 휴식 음악</b>첫 링크는 이미 양쪽에 들어가 있어요</figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="../img/ko/overlay-break.png" alt="집중이 끝난 화면. 휴식 시작 버튼 아래에 음악 열고 휴식 시작" width="780" height="1688" loading="lazy" /></div>
+            <figcaption><b>끝났을 때의 화면</b>휴식이 시작되면서 음악도 함께 열려요</figcaption>
+          </figure>
+        </div>
+
+        <div class="callout reveal">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M19.5 24.5l5-5m-7 2l-2 2a3.5 3.5 0 0 0 5 5l2-2m2.5-9l2-2a3.5 3.5 0 0 1 5 5l-2 2"/></svg>
+          <div>
+            <p><strong>Amazon Music이 아니어도 괜찮아요.</strong> 공유 메뉴에서 링크를 복사할 수 있는 앱이라면 순서는 똑같아요. 플레이리스트뿐 아니라 앨범이나 곡 하나, 스테이션의 링크도 맡겨 둘 수 있어요. 저장할 수 있는 건 다섯 개까지예요. 집중할 때와 쉴 때 서로 다른 음악을 골라 둘 수도 있어요.</p>
+            <p>링크를 어디서 열지는 휴대폰이 정해요. 음악 앱이 설치되어 있으면 대개 그 앱에서 열려요. 앱이 없거나 휴대폰 설정에 따라서는 브라우저에서 열리기도 해요. 열렸는데 곡이 저절로 시작되지 않으면, 음악 앱에서 재생 버튼을 눌러 주세요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="scenes" class="soft">
+      <div class="wrap split">
+        <div class="reveal">
+          <div class="section-head" style="text-align:left;margin:0 0 28px">
+            <h2>하루의 모양에 시간을 맞춘다.</h2>
+            <p>집에서 오래 앉아 일하는 날과 점심시간의 15분은 알맞은 리듬이 서로 달라요. <span class="path">설정 › 타이머</span>에서 장면을 고르면 집중 시간, 짧은 휴식, 긴 휴식, 긴 휴식까지의 횟수가 한꺼번에 바뀌어요.</p>
+          </div>
+          <ul class="scene-list">
+            <li><b>재택근무</b><span>집중 50분 · 휴식 10분 · 4번이면 약 4시간 20분</span></li>
+            <li class="on"><b>공부</b><span>집중 25분 · 휴식 5분 · 4번이면 약 2시간 10분 (기본)</span></li>
+            <li><b>자투리 시간</b><span>집중 15분 · 휴식 3분 · 3번이면 약 1시간</span></li>
+          </ul>
+          <p class="muted">이름과 시간은 <span class="ui">장면 추가 및 편집</span>에서 바꿀 수 있어요. 나만의 장면을 더할 수도 있고, 모두 합쳐 다섯 개까지예요. 처음부터 들어 있는 세 가지는 <span class="ui">처음 시간으로 되돌리기</span>를 누르면 언제든 원래대로 돌아와요.</p>
+        </div>
+        <figure class="phone reveal"><img src="../img/ko/settings-top.png" alt="설정의 타이머. 재택근무, 공부(선택됨), 자투리 시간, 장면 추가 및 편집" width="780" height="1688" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <section id="basics">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>손댈 곳은 그리 많지 않다.</h2>
+          <p>버튼은 세 개. 그다음엔 책상 위에 올려 두고 그냥 내버려 두세요.</p>
+        </div>
+        <div class="tiles">
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="fl" d="M18 14.5v15l12-7.5z"/></svg>
+            <h3>재생으로 시작</h3>
+            <p>가운데 둥근 버튼을 누르면 집중이 시작돼요. 시간이 다 되면 화면이 ‘수고했어요!’로 바뀌고, 거기서 휴식으로 넘어갈 수 있어요.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M15 22a7 7 0 1 0 2-5m-2-3v4h4"/></svg>
+            <h3>처음으로, 다음으로</h3>
+            <p>왼쪽 버튼은 처음부터 다시 하고, 오른쪽 버튼은 다음으로 넘어가요. 집중 중이면 휴식으로, 휴식 중이면 집중으로요. 타이머가 돌아가는 중이거나 일시정지 중일 때는 먼저 한 번 물어보니, 잘못 눌러도 잃는 건 없어요.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><circle class="st" cx="22" cy="22" r="4"/><circle class="st" cx="22" cy="22" r="9" stroke-dasharray="2 4"/></svg>
+            <h3>타이머 누르기</h3>
+            <p>숫자를 보고 싶지 않을 때도 있고, 잠깐 확인만 하고 싶을 때도 있죠. 타이머를 누르면 남은 시간 숫자가 한동안 나타나거나 사라져요. 설정은 그대로예요.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M14 16h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8l-5 4v-4h-3a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/></svg>
+            <h3>응원 문구</h3>
+            <p>화면 가운데의 문구는 5분쯤마다 조용히 바뀌어요. 기다리기 어렵다면 문구 언저리 아무 데나 눌러 보세요. 다음 한마디가 나와요.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><circle class="st" cx="22" cy="22" r="3.5"/><path class="st" d="M22 13v3m0 12v3m9-9h-3m-12 0h-3m15.4-6.4l-2.1 2.1m-8.6 8.6l-2.1 2.1m12.8 0l-2.1-2.1m-8.6-8.6l-2.1-2.1"/></svg>
+            <h3>설정</h3>
+            <p>오른쪽 위의 톱니바퀴에서 열어요. 닫을 때는 왼쪽에서 오른쪽으로 쓸어 넘기면 돼요. 타이머가 도는 동안 톱니바퀴는 모습을 감추고 있어요.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><rect class="st" x="12" y="17" width="20" height="11" rx="2.5"/><path class="st" d="M27 12.5a8 8 0 0 1 4.5 3"/></svg>
+            <h3>세로로도, 가로로도</h3>
+            <p>휴대폰을 책상에 세워 작은 탁상시계처럼 쓴다면, 가로로 두는 편이 차분해요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="notices" class="soft">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>소리 대신, 진동과 알림.</h2>
+          <p>시간이 다 되면 Take It Easy는 진동과 알림으로 알려 줘요. 알람 소리는 울리지 않아요.</p>
+        </div>
+        <div class="tiles">
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M15 27h14l-2-3v-5a5 5 0 0 0-10 0v5zM20 30a2 2 0 0 0 4 0"/></svg>
+            <h3>구간 종료 알림</h3>
+            <p>알림을 보내도 될지는 처음 재생을 누를 때 물어봐요. 대답을 기다리지 않고 타이머는 바로 움직이기 시작해요. 나중에 마음이 바뀌면 <span class="path">설정 › 알림</span>으로 가세요. ‘알림이 꺼져 있어요’라고 나와 있다면 <span class="ui">시스템 설정 열기</span>를 눌러 거기서 허용해 주세요. 알림 소리는 휴대폰의 알림 설정을 따라요.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><circle class="st" cx="22" cy="23" r="8"/><path class="st" d="M22 19v4h3M15 14l-2 2m16-2l2 2"/></svg>
+            <h3>매일 알림</h3>
+            <p>정해 둔 시각에, 하루 한 번만 살짝 말을 걸어요. 그날 이미 한 번을 마쳤다면 조용히 있어요.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M27.5 25.5A8 8 0 0 1 18.5 14.5a8 8 0 1 0 9 11z"/></svg>
+            <h3>집중 모드</h3>
+            <p>다른 앱의 알림이 자꾸 어깨를 두드린다면 휴대폰의 집중 모드를 써 보세요. iPhone에서는 제어 센터를 열고 <span class="ui">집중 모드</span>를 누른 뒤 <span class="ui">방해 금지 모드</span>나 <span class="ui">업무</span>를 고르면 돼요. Android에서는 화면 위에서 아래로 두 번 쓸어내리고 <span class="ui">방해 금지</span>를 누르세요. 구간 종료 알림은 계속 받고 싶다면 Take It Easy를 허용 앱에 넣어 두세요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="look">
+      <div class="wrap duo">
+        <div class="card reveal">
+          <h3>표시와 테마</h3>
+          <div class="swatches" aria-hidden="true">
+            <span><i style="background:linear-gradient(135deg,#384959,#6a89a7,#88bdf2)"></i>Morning</span>
+            <span><i style="background:linear-gradient(135deg,#3d4127,#636b2f,#bac095)"></i>Forest</span>
+            <span><i style="background:linear-gradient(135deg,#0f0e47,#505081,#8686ac)"></i>Night</span>
+            <span><i style="background:linear-gradient(135deg,#4a4a4a,#6d8196,#cbcbcb)"></i>Paper</span>
+          </div>
+          <ul>
+            <li><span class="ui">문자판</span> 디지털, 모래시계, 아날로그 가운데서 골라요.</li>
+            <li><span class="ui">스타일</span> <span class="ui">선명</span>은 방 건너편에서도 읽히는 ‘n분 남음’을, <span class="ui">모던</span>은 가는 숫자와 눈금을 보여 줘요.</li>
+            <li><span class="ui">남은 시간 숫자</span> 문자판마다 숫자를 보일지 말지 정해 둘 수 있어요.</li>
+            <li><span class="ui">화면 모드</span> 라이트, 완전한 검정의 다크, 또는 휴대폰 설정 그대로.</li>
+            <li><span class="ui">응원 문구</span> 바뀌는 간격은 <span class="path">설정 › 음악과 문구</span>에서 정해요.</li>
+          </ul>
+        </div>
+        <div id="tip" class="card tip-card reveal">
+          <h3>응원 팁</h3>
+          <p>여기에는 광고가 없고, 가입해야 할 계정도 없어요. 이 앱이 책상 위에 자리를 잡았다면 <b>설정 › 기타 › 응원 팁</b>에서 팁을 보낼 수 있어요. 개발을 이어 가는 데 힘이 돼요.</p>
+          <p>팁은 그때마다 한 번씩 하는 결제예요. 내더라도 기능은 하나도 달라지지 않으니, 나중에 복원할 것도 없어요.</p>
+          <div class="tip-amounts"><span>커피 한 잔</span><span>점심</span><span>맛있는 한 끼</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="soft">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>자주 묻는 질문</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>타이머 소리가 나지 않아요</summary>
+            <p>처음부터 소리를 내지 않도록 만들었어요. 시간이 다 되면 진동과 알림으로 알려 줘요. 알림이 오지 않는다면 <a href="#notices">구간 종료 알림</a>을 살펴봐 주세요.</p>
+          </details>
+          <details>
+            <summary>듣고 있는 음악이 멈추지는 않나요?</summary>
+            <p>멈추지 않아요. 이 앱은 오디오와 관련된 부분에 전혀 손대지 않아서, 다른 앱의 음악을 멈추거나 소리를 줄일 수 없어요.</p>
+          </details>
+          <details>
+            <summary>‘링크를 찾지 못했어요’라고 나와요</summary>
+            <p>복사한 내용에 https://로 시작하는 링크가 들어 있지 않은 것 같아요. 음악 앱의 공유 메뉴에서 링크를 다시 복사한 다음, <span class="ui">복사한 링크를 붙여 넣어 추가</span>를 한 번 더 눌러 주세요. 링크 앞뒤에 다른 글이 붙어 있어도 링크만 골라서 저장해요.</p>
+          </details>
+          <details>
+            <summary>링크가 브라우저에서 열려요</summary>
+            <p>어떤 앱으로 링크를 열지는 휴대폰이 정해요. 음악 앱이 설치되어 있고 그 앱이 링크를 열도록 허용되어 있으면 앱에서 열려요. 음악 앱을 다시 설치해 보거나, 휴대폰의 ‘기본으로 열기’ 설정을 확인해 보세요.</p>
+          </details>
+          <details>
+            <summary>화면이 꺼져요</summary>
+            <p>메인 화면에서 타이머가 도는 동안에는 화면을 켜 둬요. 멈춰 있을 때나 설정, 다른 앱을 열었을 때는 평소처럼 꺼져요.</p>
+          </details>
+          <details>
+            <summary>다른 앱을 쓰는 동안에도 타이머가 흘러가나요?</summary>
+            <p>흘러가요. 끝나는 시각을 먼저 정해 두고 그 순간을 향해 세기 때문에, 다른 앱을 열거나 화면을 꺼도 어긋나지 않아요. 시간이 되면 알림으로 알려 줘요.</p>
+          </details>
+          <details>
+            <summary>데이터는 어디에 저장되나요?</summary>
+            <p>설정도, 저장한 링크도, 지금까지의 누적 기록도 휴대폰 안에만 있어요. 자세한 내용은 <a href="https://ys4614.github.io/legal/takeiteasy/privacy/">개인정보 처리방침</a>에 적어 두었어요.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <h2>문의</h2>
+          <p>써 보신 소감도, 고장 났다는 소식도 모두 고맙게 읽고 있어요. 가능하면 휴대폰 기종과 OS 버전, 앱 버전(설정 맨 아래에 있어요)을 함께 적어 주세요. 원인을 찾기가 훨씬 쉬워져요.</p>
+        </div>
+        <a class="pill pill-solid" href="mailto:support@haroworks.com">support@haroworks.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Amazon Music은 Amazon.com, Inc. 또는 그 계열사의 상표입니다. Take It Easy는 Amazon과 제휴 관계가 없으며, Amazon의 보증을 받은 앱이 아닙니다.</p>
+      <p>&copy; <a href="/">HARO Works</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var items = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      items.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>

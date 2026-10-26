@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es" data-help-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Ayuda de Take It Easy | HARO Works</title>
+  <meta name="description" content="Cómo usar Take It Easy: añadir enlaces de música (con Amazon Music como ejemplo), escenas, avisos, modo Concentración, propinas de apoyo y preguntas frecuentes." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#eef5fc" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+  <link rel="canonical" href="https://haroworks.com/takeiteasy/help/es/" />
+  <link rel="alternate" hreflang="ja" href="https://haroworks.com/takeiteasy/help/" />
+  <link rel="alternate" hreflang="en" href="https://haroworks.com/takeiteasy/help/en/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://haroworks.com/takeiteasy/help/zh-hans/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://haroworks.com/takeiteasy/help/zh-hant/" />
+  <link rel="alternate" hreflang="ko" href="https://haroworks.com/takeiteasy/help/ko/" />
+  <link rel="alternate" hreflang="es" href="https://haroworks.com/takeiteasy/help/es/" />
+  <link rel="alternate" hreflang="fr" href="https://haroworks.com/takeiteasy/help/fr/" />
+  <link rel="alternate" hreflang="de" href="https://haroworks.com/takeiteasy/help/de/" />
+  <link rel="alternate" hreflang="pt" href="https://haroworks.com/takeiteasy/help/pt/" />
+  <link rel="alternate" hreflang="x-default" href="https://haroworks.com/takeiteasy/help/en/" />
+  <link rel="icon" href="../img/icon.png" />
+  <link rel="apple-touch-icon" href="../img/icon.png" />
+  <link rel="stylesheet" href="../help.css?v=3" />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      var KEY = 'tie-help-lang';
+      var BASE = '/takeiteasy/help/';
+      var PATHS = {'ja': '', 'en': 'en/', 'zh-hans': 'zh-hans/', 'zh-hant': 'zh-hant/', 'ko': 'ko/', 'es': 'es/', 'fr': 'fr/', 'de': 'de/', 'pt': 'pt/'};
+      window.tieHelp = { key: KEY, base: BASE, paths: PATHS };
+      try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+      if (navigator.webdriver || /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)) return;
+      var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+      var pick = null;
+      for (var i = 0; i < langs.length && !pick; i++) {
+        var l = String(langs[i]).toLowerCase();
+        if (l.indexOf('zh') === 0) pick = /hant|-tw|-hk|-mo/.test(l) ? 'zh-hant' : 'zh-hans';
+        else if (PATHS.hasOwnProperty(l.split('-')[0])) pick = l.split('-')[0];
+      }
+      pick = pick || 'en';
+      if (pick !== d.getAttribute('data-help-lang')) location.replace(BASE + PATHS[pick] + location.hash);
+    })();
+  </script>
+</head>
+<body>
+  <nav class="nav" aria-label="Ayuda">
+    <div class="wrap">
+      <a class="nav-brand" href="#top"><img src="../img/icon.png" alt="" />Take It Easy</a>
+      <div class="nav-links">
+        <a href="#music">Música</a>
+        <a href="#scenes">Escenas</a>
+        <a href="#basics">Lo básico</a>
+        <a href="#notices">Avisos</a>
+        <a href="#faq">Preguntas</a>
+      </div>
+      <label class="lang-select">
+        <select aria-label="Idioma" onchange="try{localStorage.setItem(tieHelp.key,this.value)}catch(e){}location.href=tieHelp.base+tieHelp.paths[this.value]">
+          <option value="ja" lang="ja">日本語</option>
+          <option value="en" lang="en">English</option>
+          <option value="zh-hans" lang="zh-Hans">简体中文</option>
+          <option value="zh-hant" lang="zh-Hant">繁體中文</option>
+          <option value="ko" lang="ko">한국어</option>
+          <option value="es" selected lang="es">Español</option>
+          <option value="fr" lang="fr">Français</option>
+          <option value="de" lang="de">Deutsch</option>
+          <option value="pt" lang="pt">Português</option>
+        </select>
+      </label>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Ayuda de Take It Easy</p>
+        <h1>Se queda en una esquina de la mesa, contando en silencio.</h1>
+        <p class="sub">Take It Easy no hace ni un solo ruido. Cuenta veinticinco minutos y, de vez en cuando, deja unas pocas palabras en la pantalla. No hace nada más. Aquí va, paso a paso, cómo llevarte bien con ella.</p>
+        <div class="hero-cta">
+          <a class="pill pill-solid" href="#music">Añadir un enlace de música</a>
+          <a class="pill pill-ghost" href="#faq">Preguntas frecuentes ›</a>
+        </div>
+
+        <div class="hero-phones" aria-hidden="true">
+          <figure class="phone"><img src="../img/es/link-edit.png" alt="" width="780" height="1688" /></figure>
+          <figure class="phone"><img src="../img/es/main-music.png" alt="" width="780" height="1688" /></figure>
+          <figure class="phone"><img src="../img/es/overlay-break.png" alt="" width="780" height="1688" /></figure>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <nav class="topics" aria-label="Contenido">
+        <a class="topic" href="#music">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M18 29V15l12-3v14"/><circle class="fl" cx="15.5" cy="29" r="3"/><circle class="fl" cx="27.5" cy="26" r="3"/></svg>
+          <strong>Enlaces de música</strong><span>Tus canciones de siempre, a mano</span>
+        </a>
+        <a class="topic" href="#scenes">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><circle class="st" cx="22" cy="22" r="10"/><path class="st" d="M22 16v6l4 3"/></svg>
+          <strong>Escenas</strong><span>Días en casa, semanas de exámenes, la pausa del mediodía</span>
+        </a>
+        <a class="topic" href="#basics">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="fl" d="M18 14.5v15l12-7.5z"/></svg>
+          <strong>Lo básico</strong><span>Tres botones, y poco más</span>
+        </a>
+        <a class="topic" href="#notices">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M15 27h14l-2-3v-5a5 5 0 0 0-10 0v5zM20 30a2 2 0 0 0 4 0"/></svg>
+          <strong>Avisos</strong><span>Una vibración y un aviso, no un sonido</span>
+        </a>
+        <a class="topic" href="#look">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><circle class="st" cx="22" cy="22" r="10"/><path class="fl" d="M22 12a10 10 0 0 1 0 20z"/></svg>
+          <strong>Pantalla y temas</strong><span>Esferas y cuatro colores</span>
+        </a>
+        <a class="topic" href="#tip">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M22 30s-8-4.6-8-10a4.5 4.5 0 0 1 8-2.8 4.5 4.5 0 0 1 8 2.8c0 5.4-8 10-8 10z"/></svg>
+          <strong>Propinas de apoyo</strong><span>En lugar de anuncios</span>
+        </a>
+        <a class="topic" href="#faq">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M18.5 18a3.5 3.5 0 1 1 5 3.2c-1 .5-1.5 1.3-1.5 2.3v.5"/><circle class="fl" cx="22" cy="28.5" r="1.4"/></svg>
+          <strong>Preguntas frecuentes</strong><span>¿Sonido? ¿Música?</span>
+        </a>
+        <a class="topic" href="#contact">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><rect class="st" x="13" y="15" width="18" height="14" rx="3"/><path class="st" d="M14 17l8 6 8-6"/></svg>
+          <strong>Contacto</strong><span>Impresiones o fallos</span>
+        </a>
+      </nav>
+    </div>
+
+    <section id="music">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>La música se queda en tu app de música.</h2>
+          <p>Esta app no pone música de fondo ni detiene lo que estés escuchando. La música queda en manos de la app que ya usas. Lo que sí puedes hacer es confiarle el enlace de una lista que te guste, para tenerla a mano cuando te sientas a trabajar o cuando te levantas a descansar. Así se hace con Amazon Music.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num">STEP 1</span>
+            <h3>Copia un enlace en Amazon Music</h3>
+            <ol>
+              <li>Abre la lista, el álbum o la canción que quieras tener de compañía.</li>
+              <li>Toca el botón de compartir. Si no lo encuentras, <span class="ui">Compartir</span> está escondido dentro del menú “…”.</li>
+              <li>En la lista que aparece, elige <span class="ui">Copiar enlace</span>. En el iPhone a veces solo dice <span class="ui">Copiar</span>.</li>
+            </ol>
+            <div class="step-foot">
+              <figure class="phone">
+                <svg viewBox="0 0 240 520" role="img" aria-labelledby="share-es-title">
+                  <title id="share-es-title">Ilustración: elegir Copiar enlace en el menú Compartir</title>
+                  <rect x="0" y="0" width="240" height="520" fill="#eef5fc" />
+                  <rect x="24" y="64" width="192" height="192" rx="16" fill="#d7e2ee" />
+                  <rect x="24" y="276" width="140" height="14" rx="7" fill="#c3d1e0" />
+                  <rect x="24" y="300" width="96" height="12" rx="6" fill="#d7e2ee" />
+                  <rect x="0" y="300" width="240" height="220" rx="24" fill="#ffffff" />
+                  <rect x="104" y="312" width="32" height="5" rx="2.5" fill="#c3d1e0" />
+                  <text x="24" y="350" font-size="17" font-weight="700" fill="#0f1c2e" font-family="-apple-system, 'Helvetica Neue', sans-serif">Compartir</text>
+                  <rect x="16" y="366" width="208" height="48" rx="14" fill="#e3edf8" stroke="#6a89a7" stroke-width="2" />
+                  <circle cx="42" cy="390" r="12" fill="#384959" />
+                  <path d="M36.5 393.5l3-3m2-2l3-3m-6.5 1.5l-1.5 1.5a3 3 0 0 0 4.2 4.2l1.5-1.5m1.6-5.7l1.5-1.5a3 3 0 0 1 4.2 4.2l-1.5 1.5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" />
+                  <text x="64" y="396" font-size="15" font-weight="700" fill="#0f1c2e" font-family="-apple-system, 'Helvetica Neue', sans-serif">Copiar enlace</text>
+                  <circle cx="42" cy="444" r="12" fill="#d7e2ee" />
+                  <rect x="64" y="438" width="96" height="12" rx="6" fill="#d7e2ee" />
+                  <circle cx="42" cy="490" r="12" fill="#d7e2ee" />
+                  <rect x="64" y="484" width="120" height="12" rx="6" fill="#d7e2ee" />
+                </svg>
+              </figure>
+            </div>
+          </article>
+
+          <article class="step reveal">
+            <span class="step-num">STEP 2</span>
+            <h3>Pégalo en Take It Easy</h3>
+            <ol>
+              <li>Ve a <span style="white-space:nowrap"><span class="path">Ajustes › Música y frases › Música</span>.</span></li>
+              <li>Abre <span class="ui">Enlaces de música</span> y toca <span class="ui">Pegar un enlace copiado para añadirlo</span>. El enlace que acabas de copiar entra tal cual.</li>
+              <li>Ponle el nombre que quieras. “Lista para concentrarme”, “Día de lluvia”, cualquiera que reconozcas más tarde.</li>
+            </ol>
+            <div class="step-foot">
+              <figure class="phone"><img src="../img/es/link-edit.png" alt="Editar enlace: Nombre Lista para concentrarme, Enlace actual music.amazon.es, Probar" width="780" height="1688" loading="lazy" /></figure>
+            </div>
+          </article>
+
+          <article class="step reveal">
+            <span class="step-num">STEP 3</span>
+            <h3>Ábrelo al empezar</h3>
+            <ol>
+              <li>En la pantalla principal aparece ahora <span class="ui">Abrir &lt;nombre&gt;</span>. Tócalo y se abre Amazon Music.</li>
+              <li>Cuando termina una sesión de enfoque, también verás <span class="ui">Abrir música y empezar el descanso</span>. El descanso empieza y el enlace se abre en el mismo instante.</li>
+              <li>Cuando la música ya esté sonando, vuelve a Take It Easy. Seguirá sonando.</li>
+            </ol>
+            <div class="step-foot">
+              <figure class="phone"><img src="../img/es/main-music.png" alt="Pantalla principal con Abrir Lista para concentrarme encima del botón de reproducir" width="780" height="1688" loading="lazy" /></figure>
+            </div>
+          </article>
+        </div>
+
+        <div class="gallery reveal" aria-label="Pantallas para añadir un enlace">
+          <figure>
+            <div class="phone"><img src="../img/es/music-sheet.png" alt="Ajustes › Música: Enlaces de música 0 / 5, Música para enfocarte Ninguna, Música para el descanso Ninguna" width="780" height="1688" loading="lazy" /></div>
+            <figcaption><b>Ajustes › Música</b>Aquí se guardan los enlaces y se elige la música para enfocarte y para el descanso</figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="../img/es/links-empty.png" alt="La hoja Enlaces de música con el botón Pegar un enlace copiado para añadirlo" width="780" height="1688" loading="lazy" /></div>
+            <figcaption><b>Pegar para añadir</b>El enlace copiado va directo al primer hueco</figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="../img/es/music-sheet-done.png" alt="Ajustes › Música: Lista para concentrarme en Música para enfocarte y en Música para el descanso" width="780" height="1688" loading="lazy" /></div>
+            <figcaption><b>Enfoque y descanso</b>Tu primer enlace ya queda puesto en los dos</figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="../img/es/overlay-break.png" alt="Pantalla de fin de sesión con Abrir música y empezar el descanso debajo del botón Descansar" width="780" height="1688" loading="lazy" /></div>
+            <figcaption><b>Al terminar una sesión</b>Empieza el descanso y, a la vez, se abre la música</figcaption>
+          </figure>
+        </div>
+
+        <div class="callout reveal">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M19.5 24.5l5-5m-7 2l-2 2a3.5 3.5 0 0 0 5 5l2-2m2.5-9l2-2a3.5 3.5 0 0 1 5 5l-2 2"/></svg>
+          <div>
+            <p><strong>No tiene por qué ser Amazon Music.</strong> Cualquier app que te deje copiar un enlace desde su menú de compartir funciona igual. Sirven las listas, y también los álbumes, las canciones sueltas y las emisoras. Puedes guardar hasta cinco y elegir una música para enfocarte y otra para el descanso.</p>
+            <p>Dónde se abre un enlace lo decide tu teléfono. Si tienes instalada la app de música, lo normal es que se abra ahí. Si no la tienes, o según tus ajustes, puede abrirse en el navegador. Si la música no empieza sola, toca el botón de reproducir en la app de música.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="scenes" class="soft">
+      <div class="wrap split">
+        <div class="reveal">
+          <div class="section-head" style="text-align:left;margin:0 0 28px">
+            <h2>Ajusta el temporizador a la forma de tu día.</h2>
+            <p>Un día largo de trabajo en casa y una pausa de quince minutos al mediodía piden ritmos distintos. Elige una escena en <span class="path">Ajustes › Temporizador</span> y cambian a la vez el tiempo de enfoque, el descanso corto, el descanso largo y el número de sesiones.</p>
+          </div>
+          <ul class="scene-list">
+            <li><b>Teletrabajo</b><span>Enfoque 50 min · descanso 10 min · 4 sesiones, aprox. 4 h 20 min</span></li>
+            <li class="on"><b>Estudio</b><span>Enfoque 25 min · descanso 5 min · 4 sesiones, aprox. 2 h 10 min (la predeterminada)</span></li>
+            <li><b>Ratos libres</b><span>Enfoque 15 min · descanso 3 min · 3 sesiones, aprox. 1 h</span></li>
+          </ul>
+          <p class="muted">Los nombres y los tiempos se cambian en <span class="ui">Añadir o editar escenas</span>. También puedes añadir las tuyas, hasta cinco en total. Las tres que trae la app siempre pueden recuperar sus tiempos con <span class="ui">Volver a los tiempos originales</span>.</p>
+        </div>
+        <figure class="phone reveal"><img src="../img/es/settings-top.png" alt="Ajustes › Temporizador: Teletrabajo, Estudio (seleccionada), Ratos libres, Añadir o editar escenas" width="780" height="1688" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <section id="basics">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>No hay mucho que tocar.</h2>
+          <p>Tres botones. Lo demás es dejarla sobre la mesa y no hacerle caso.</p>
+        </div>
+        <div class="tiles">
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="fl" d="M18 14.5v15l12-7.5z"/></svg>
+            <h3>Toca reproducir</h3>
+            <p>Toca el botón redondo del centro y empieza una sesión de enfoque. Cuando se acaba el tiempo, la pantalla cambia a “¡Buen trabajo!” y desde ahí puedes empezar el descanso.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M15 22a7 7 0 1 0 2-5m-2-3v4h4"/></svg>
+            <h3>Volver a empezar, o saltar</h3>
+            <p>El botón de la izquierda vuelve a empezar. El de la derecha te hace avanzar, del enfoque al descanso o del descanso al enfoque. Si el temporizador está en marcha o en pausa, antes te lo pregunta, así que un toque sin querer no te cuesta nada.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><circle class="st" cx="22" cy="22" r="4"/><circle class="st" cx="22" cy="22" r="9" stroke-dasharray="2 4"/></svg>
+            <h3>Toca el temporizador</h3>
+            <p>Hay momentos en que prefieres no ver los números y otros en que solo quieres echar un vistazo. Toca el temporizador y el tiempo que queda aparece o desaparece durante un rato. Tus ajustes no cambian.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M14 16h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8l-5 4v-4h-3a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/></svg>
+            <h3>Frases de ánimo</h3>
+            <p>Las frases del centro de la pantalla cambian en silencio cada cinco minutos, más o menos. Si no puedes esperar, toca en cualquier punto a su alrededor y aparece la siguiente.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><circle class="st" cx="22" cy="22" r="3.5"/><path class="st" d="M22 13v3m0 12v3m9-9h-3m-12 0h-3m15.4-6.4l-2.1 2.1m-8.6 8.6l-2.1 2.1m12.8 0l-2.1-2.1m-8.6-8.6l-2.1-2.1"/></svg>
+            <h3>Ajustes</h3>
+            <p>Se abren desde el engranaje de arriba a la derecha. Para cerrarlos, desliza el dedo de izquierda a derecha. Mientras el temporizador corre, el engranaje no se deja ver.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><rect class="st" x="12" y="17" width="20" height="11" rx="2.5"/><path class="st" d="M27 12.5a8 8 0 0 1 4.5 3"/></svg>
+            <h3>En vertical o en horizontal</h3>
+            <p>Si dejas el teléfono de pie sobre la mesa, como un pequeño reloj, en horizontal se ve a gusto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="notices" class="soft">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Una vibración y un aviso, en lugar de un sonido.</h2>
+          <p>Cuando se acaba el tiempo, Take It Easy te avisa con una vibración y una notificación. No suena ninguna alarma.</p>
+        </div>
+        <div class="tiles">
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M15 27h14l-2-3v-5a5 5 0 0 0-10 0v5zM20 30a2 2 0 0 0 4 0"/></svg>
+            <h3>Aviso al terminar</h3>
+            <p>La primera vez que tocas reproducir, la app te pregunta si puede enviarte notificaciones, y el temporizador arranca sin esperar tu respuesta. Si más adelante cambias de idea, ve a <span class="path">Ajustes › Avisos</span>. Si ahí pone “Las notificaciones están desactivadas”, toca <span class="ui">Abrir ajustes del sistema</span> y permítelas desde allí. El sonido de la notificación depende de los ajustes de tu teléfono.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><circle class="st" cx="22" cy="23" r="8"/><path class="st" d="M22 19v4h3M15 14l-2 2m16-2l2 2"/></svg>
+            <h3>Recordatorio diario</h3>
+            <p>Una vez al día, a la hora que elijas, te da un pequeño toque. Si ese día ya terminaste una sesión, no dice nada.</p>
+          </div>
+          <div class="tile reveal">
+            <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle class="bg" cx="22" cy="22" r="22"/><path class="st" d="M27.5 25.5A8 8 0 0 1 18.5 14.5a8 8 0 1 0 9 11z"/></svg>
+            <h3>Modo Concentración</h3>
+            <p>Si otras apps no dejan de tocarte el hombro, prueba el modo Concentración de tu teléfono. En el iPhone, abre el Centro de control, toca <span class="ui">Concentración</span> y elige <span class="ui">No molestar</span> o <span class="ui">Trabajo</span>. En Android, desliza dos veces hacia abajo desde la parte superior y toca <span class="ui">No molestar</span>. Para seguir recibiendo los avisos de fin de sesión, añade Take It Easy a las apps permitidas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="look">
+      <div class="wrap duo">
+        <div class="card reveal">
+          <h3>Pantalla y temas</h3>
+          <div class="swatches" aria-hidden="true">
+            <span><i style="background:linear-gradient(135deg,#384959,#6a89a7,#88bdf2)"></i>Morning</span>
+            <span><i style="background:linear-gradient(135deg,#3d4127,#636b2f,#bac095)"></i>Forest</span>
+            <span><i style="background:linear-gradient(135deg,#0f0e47,#505081,#8686ac)"></i>Night</span>
+            <span><i style="background:linear-gradient(135deg,#4a4a4a,#6d8196,#cbcbcb)"></i>Paper</span>
+          </div>
+          <ul>
+            <li><span class="ui">Esfera</span> Elige entre Digital, Arena o Analógico.</li>
+            <li><span class="ui">Estilo</span> <span class="ui">Clara</span> muestra un “Quedan n min” que se lee desde el otro lado de la habitación; <span class="ui">Moderna</span> usa números finos con marcas.</li>
+            <li><span class="ui">Mostrar el tiempo</span> Decide, esfera por esfera, si se ven los números.</li>
+            <li><span class="ui">Apariencia</span> Claro, Oscuro en negro puro, o Sistema para seguir a tu teléfono.</li>
+            <li><span class="ui">Frases de ánimo</span> Cada cuánto cambian se decide en <span class="path">Ajustes › Música y frases</span>.</li>
+          </ul>
+        </div>
+        <div id="tip" class="card tip-card reveal">
+          <h3>Propinas de apoyo</h3>
+          <p>Aquí no hay anuncios ni cuentas que crear. Si la app se ha ganado un sitio en tu mesa, puedes dejar una propina desde <b>Ajustes › Otros › Propina de apoyo</b>. Ayuda a que el desarrollo siga adelante.</p>
+          <p>Cada propina es un pago único. Pagar no cambia ninguna función, así que después no hay nada que restaurar.</p>
+          <div class="tip-amounts"><span>Un café</span><span>Un almuerzo</span><span>Un capricho</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="soft">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Preguntas frecuentes</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>El temporizador no suena</summary>
+            <p>Está hecha para no sonar. Cuando se acaba el tiempo, recibes una vibración y una notificación. Si las notificaciones no llegan, echa un vistazo a <a href="#notices">Aviso al terminar</a>.</p>
+          </details>
+          <details>
+            <summary>¿Va a detener mi música?</summary>
+            <p>No. La app no toca nada que tenga que ver con el audio, así que no puede detener la música de otras apps ni bajarle el volumen.</p>
+          </details>
+          <details>
+            <summary>Aparece “No se encontró ningún enlace”</summary>
+            <p>Parece que lo que copiaste no incluye un enlace que empiece con https://. Vuelve a copiar el enlace desde el menú de compartir de tu app de música y toca otra vez <span class="ui">Pegar un enlace copiado para añadirlo</span>. Si hay texto de más alrededor del enlace, solo se guarda el enlace.</p>
+          </details>
+          <details>
+            <summary>El enlace se abre en el navegador</summary>
+            <p>Qué app abre un enlace lo decide tu teléfono. Si la app de música está instalada y tiene permiso para abrir sus enlaces, se abre ahí. Puedes reinstalar la app de música o revisar en tu teléfono el ajuste “Abrir de forma predeterminada”.</p>
+          </details>
+          <details>
+            <summary>La pantalla se apaga</summary>
+            <p>Mientras el temporizador corre en la pantalla principal, la pantalla se queda encendida. Cuando está detenido, o cuando tienes abiertos los Ajustes u otra app, se apaga como lo haría normalmente.</p>
+          </details>
+          <details>
+            <summary>¿El temporizador sigue mientras uso otras apps?</summary>
+            <p>Sí. La app calcula cuándo terminará la sesión y cuenta hacia ese momento, así que abrir otras apps o apagar la pantalla no la desajusta. Cuando se acaba el tiempo, te avisa una notificación.</p>
+          </details>
+          <details>
+            <summary>¿Dónde se guardan mis datos?</summary>
+            <p>Tus ajustes, los enlaces guardados y los totales acumulados se quedan en tu teléfono y en ningún otro sitio. Los detalles están en la <a href="https://ys4614.github.io/legal/takeiteasy/privacy/">política de privacidad</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <h2>Contacto</h2>
+          <p>Tus impresiones al usarla y los avisos de cualquier fallo se leen siempre con gratitud. Si puedes, indica el modelo de tu teléfono, la versión del sistema y la versión de la app (está al final de todo en Ajustes). Así es mucho más fácil dar con el problema.</p>
+        </div>
+        <a class="pill pill-solid" href="mailto:support@haroworks.com">support@haroworks.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Amazon Music es una marca comercial de Amazon.com, Inc. o de sus filiales. Take It Easy no está afiliada a Amazon ni cuenta con su respaldo.</p>
+      <p>&copy; <a href="/">HARO Works</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var items = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      items.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-help-lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -11,11 +11,38 @@
   <link rel="canonical" href="https://haroworks.com/takeiteasy/help/" />
   <link rel="alternate" hreflang="ja" href="https://haroworks.com/takeiteasy/help/" />
   <link rel="alternate" hreflang="en" href="https://haroworks.com/takeiteasy/help/en/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://haroworks.com/takeiteasy/help/zh-hans/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://haroworks.com/takeiteasy/help/zh-hant/" />
+  <link rel="alternate" hreflang="ko" href="https://haroworks.com/takeiteasy/help/ko/" />
+  <link rel="alternate" hreflang="es" href="https://haroworks.com/takeiteasy/help/es/" />
+  <link rel="alternate" hreflang="fr" href="https://haroworks.com/takeiteasy/help/fr/" />
+  <link rel="alternate" hreflang="de" href="https://haroworks.com/takeiteasy/help/de/" />
+  <link rel="alternate" hreflang="pt" href="https://haroworks.com/takeiteasy/help/pt/" />
   <link rel="alternate" hreflang="x-default" href="https://haroworks.com/takeiteasy/help/en/" />
   <link rel="icon" href="./img/icon.png" />
   <link rel="apple-touch-icon" href="./img/icon.png" />
-  <link rel="stylesheet" href="./help.css?v=2" />
-  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="./help.css?v=3" />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      var KEY = 'tie-help-lang';
+      var BASE = '/takeiteasy/help/';
+      var PATHS = {'ja': '', 'en': 'en/', 'zh-hans': 'zh-hans/', 'zh-hant': 'zh-hant/', 'ko': 'ko/', 'es': 'es/', 'fr': 'fr/', 'de': 'de/', 'pt': 'pt/'};
+      window.tieHelp = { key: KEY, base: BASE, paths: PATHS };
+      try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+      if (navigator.webdriver || /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)) return;
+      var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+      var pick = null;
+      for (var i = 0; i < langs.length && !pick; i++) {
+        var l = String(langs[i]).toLowerCase();
+        if (l.indexOf('zh') === 0) pick = /hant|-tw|-hk|-mo/.test(l) ? 'zh-hant' : 'zh-hans';
+        else if (PATHS.hasOwnProperty(l.split('-')[0])) pick = l.split('-')[0];
+      }
+      pick = pick || 'en';
+      if (pick !== d.getAttribute('data-help-lang')) location.replace(BASE + PATHS[pick] + location.hash);
+    })();
+  </script>
 </head>
 <body>
   <nav class="nav" aria-label="ヘルプ">
@@ -28,10 +55,19 @@
         <a href="#notices">通知</a>
         <a href="#faq">よくある質問</a>
       </div>
-      <div class="lang" aria-label="言語">
-        <a href="./" aria-current="page">日本語</a>
-        <a href="./en/" hreflang="en">English</a>
-      </div>
+      <label class="lang-select">
+        <select aria-label="言語" onchange="try{localStorage.setItem(tieHelp.key,this.value)}catch(e){}location.href=tieHelp.base+tieHelp.paths[this.value]">
+          <option value="ja" selected lang="ja">日本語</option>
+          <option value="en" lang="en">English</option>
+          <option value="zh-hans" lang="zh-Hans">简体中文</option>
+          <option value="zh-hant" lang="zh-Hant">繁體中文</option>
+          <option value="ko" lang="ko">한국어</option>
+          <option value="es" lang="es">Español</option>
+          <option value="fr" lang="fr">Français</option>
+          <option value="de" lang="de">Deutsch</option>
+          <option value="pt" lang="pt">Português</option>
+        </select>
+      </label>
     </div>
   </nav>
 
