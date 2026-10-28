@@ -12,7 +12,7 @@ HARO Works（ハロワークス）の公式ウェブサイトです。**この�
 | --- | --- |
 | `index.html` | サイト本体（トップページ） |
 | `style.css` | スタイルシート |
-| `assets/` | アプリアイコン |
+| `assets/` | アプリアイコン（192×192。各アプリの 1024 のアイコンを縮小） |
 | `takeiteasy/help/` | テイクイットイージー（Take It Easy）のヘルプ。`index.html` = 日本語、`en/` `zh-hans/` `zh-hant/` `ko/` `es/` `fr/` `de/` `pt/` = 各言語。右上のプルダウンで切り替え、初めての訪問では端末の言語のページへ移る（選んだ言語はブラウザに覚える）。`help.css` は共通（変えたら HTML の `?v=` を上げる）。`img/{言語}/` の画面は take-it-easy の `store_test/help_shots_test.dart` で描いた自前の画面 |
 | `CNAME` | 独自ドメイン設定（`haroworks.com`）— **削除・変更しないこと** |
 | `app-ads.txt` | AdMob の広告主確認用（`pub-8513602258219243`）— **削除・変更しないこと** |
@@ -35,7 +35,9 @@ HARO Works（ハロワークス）の公式ウェブサイトです。**この�
 | --- | --- |
 | つぶトレ - AIスピーキングコーチ（TsubuTalk: AI Speaking Coach） | [App Store](https://apps.apple.com/jp/app/id6779087627) / [Google Play](https://play.google.com/store/apps/details?id=app.tsubutalk.mobile) |
 | 連打名人 - Tap Champion | [App Store](https://apps.apple.com/jp/app/id6788312662) / [Google Play](https://play.google.com/store/apps/details?id=com.haroworks.tapchampion) |
-| 残心スピリッツII（Zanshin Spirits II） | 2026-10-24 配信開始。公開後に [App Store](https://apps.apple.com/jp/app/id6822337942) / [Google Play](https://play.google.com/store/apps/details?id=com.haroworks.zanshinspirits2)（公開前は 404）。サイトのカードは「10/24 配信開始」表示で、公開日にストアのリンクへ差し替える |
+| 残心スピリッツII（Zanshin Spirits II） | [App Store](https://apps.apple.com/jp/app/id6822337942) / [Google Play](https://play.google.com/store/apps/details?id=com.haroworks.zanshinspirits2) |
+| テイクイットイージー（Take It Easy - Silent Pomodoro） | [App Store](https://apps.apple.com/jp/app/id6825591519) / [Google Play](https://play.google.com/store/apps/details?id=com.haroworks.takeiteasy) |
+| トレードオフ・トレーナー（Tradeoff Trainer） | [Google Play](https://play.google.com/store/apps/details?id=com.haroworks.tradeofftrainer)。App Store の Apple ID が分かったら、サイトのカードの「公式サイト」の前に App Store のボタンを足す |
 
 ## お問い合わせ
 
