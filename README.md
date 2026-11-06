@@ -12,6 +12,7 @@ HARO Works（ハロワークス）の公式ウェブサイトです。**この�
 | --- | --- |
 | `index.html` | サイト本体（トップページ） |
 | `style.css` | スタイルシート |
+| `company/` | 事業概要（代表者名・所在地・D-U-N-S）。トップには載せず、ヘッダーとフッターの「事業概要」からだけリンク。`noindex` |
 | `assets/` | アプリアイコン（192×192。各アプリの 1024 のアイコンを縮小） |
 | `takeiteasy/help/` | テイクイットイージー（Take It Easy）のヘルプ。`index.html` = 日本語、`en/` `zh-hans/` `zh-hant/` `ko/` `es/` `fr/` `de/` `pt/` = 各言語。右上のプルダウンで切り替え、初めての訪問では端末の言語のページへ移る（選んだ言語はブラウザに覚える）。`help.css` は共通（変えたら HTML の `?v=` を上げる）。`img/{言語}/` の画面は take-it-easy の `store_test/help_shots_test.dart` で描いた自前の画面 |
 | `CNAME` | 独自ドメイン設定（`haroworks.com`）— **削除・変更しないこと** |
@@ -33,6 +34,7 @@ HARO Works（ハロワークス）の公式ウェブサイトです。**この�
 
 | アプリ | ストア |
 | --- | --- |
+| Kuku Math：インド式九九（Kuku Math: Times Tables） | [App Store](https://apps.apple.com/jp/app/id6780526579) / [Google Play](https://play.google.com/store/apps/details?id=com.haroworks.kukuindia) |
 | つぶトレ - AIスピーキングコーチ（TsubuTalk: AI Speaking Coach） | [App Store](https://apps.apple.com/jp/app/id6779087627) / [Google Play](https://play.google.com/store/apps/details?id=app.tsubutalk.mobile) |
 | 連打名人 - Tap Champion | [App Store](https://apps.apple.com/jp/app/id6788312662) / [Google Play](https://play.google.com/store/apps/details?id=com.haroworks.tapchampion) |
 | 残心スピリッツII（Zanshin Spirits II） | [App Store](https://apps.apple.com/jp/app/id6822337942) / [Google Play](https://play.google.com/store/apps/details?id=com.haroworks.zanshinspirits2) |
